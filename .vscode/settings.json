@@ -1,0 +1,37 @@
+{
+    "C_Cpp.intelliSenseEngine": "Tag Parser",
+    "idf.adapterTargetName": "esp32",
+    "idf.customExtraPaths": "e:\\Programowanie\\VSCode\\ESP_IDF_data\\tools\\tools\\xtensa-esp32-elf\\esp-2021r2-patch2-8.4.0\\xtensa-esp32-elf\\bin;e:\\Programowanie\\VSCode\\ESP_IDF_data\\tools\\tools\\xtensa-esp32s2-elf\\esp-2021r2-patch2-8.4.0\\xtensa-esp32s2-elf\\bin;e:\\Programowanie\\VSCode\\ESP_IDF_data\\tools\\tools\\xtensa-esp32s3-elf\\esp-2021r2-patch2-8.4.0\\xtensa-esp32s3-elf\\bin;e:\\Programowanie\\VSCode\\ESP_IDF_data\\tools\\tools\\riscv32-esp-elf\\esp-2021r2-patch2-8.4.0\\riscv32-esp-elf\\bin;e:\\Programowanie\\VSCode\\ESP_IDF_data\\tools\\tools\\esp32ulp-elf\\2.28.51-esp-20191205\\esp32ulp-elf-binutils\\bin;e:\\Programowanie\\VSCode\\ESP_IDF_data\\tools\\tools\\esp32s2ulp-elf\\2.28.51-esp-20191205\\esp32s2ulp-elf-binutils\\bin;e:\\Programowanie\\VSCode\\ESP_IDF_data\\tools\\tools\\cmake\\3.20.3\\bin;e:\\Programowanie\\VSCode\\ESP_IDF_data\\tools\\tools\\openocd-esp32\\v0.11.0-esp32-20211220\\openocd-esp32\\bin;e:\\Programowanie\\VSCode\\ESP_IDF_data\\tools\\tools\\ninja\\1.10.2;e:\\Programowanie\\VSCode\\ESP_IDF_data\\tools\\tools\\idf-exe\\1.0.3;e:\\Programowanie\\VSCode\\ESP_IDF_data\\tools\\tools\\ccache\\4.3\\ccache-4.3-windows-64;e:\\Programowanie\\VSCode\\ESP_IDF_data\\tools\\tools\\dfu-util\\0.9\\dfu-util-0.9-win64",
+    "idf.customExtraVars": "{\"OPENOCD_SCRIPTS\":\"e:\\\\Programowanie\\\\VSCode\\\\ESP_IDF_data\\\\tools\\\\tools\\\\openocd-esp32\\\\v0.11.0-esp32-20211220/openocd-esp32/share/openocd/scripts\",\"IDF_CCACHE_ENABLE\":\"1\"}",
+    "idf.espIdfPathWin": "e:\\Programowanie\\VSCode\\ESP_IDF_data\\container\\esp-idf",
+    "idf.openOcdConfigs": [
+        "board/esp32-wrover-kit-3.3v.cfg"
+    ],
+    "idf.portWin": "COM3",
+    "idf.pythonBinPathWin": "e:\\Programowanie\\VSCode\\ESP_IDF_data\\tools\\python_env\\idf4.4_py3.8_env\\Scripts\\python.exe",
+    "idf.toolsPathWin": "e:\\Programowanie\\VSCode\\ESP_IDF_data\\tools",
+    "idf.flashType": "UART",
+    "files.associations": {
+        "task.h": "c",
+        "*.tcc": "c",
+        "iostream": "c",
+        "random": "c",
+        "array": "c",
+        "bitset": "c",
+        "string_view": "c",
+        "initializer_list": "c",
+        "regex": "c",
+        "utility": "c",
+        "*.inc": "c",
+        "freertos.h": "c",
+        "gpio_struct.h": "c",
+        "*.ipp": "c",
+        "gpio_reg.h": "c",
+        "display.h": "c",
+        "screens.h": "c",
+        "stdio.h": "c",
+        "shared.h": "c",
+        "string.h": "c",
+        "coreasm.h": "c"
+    }
+}
