@@ -2,7 +2,7 @@
 
 **DISCLAIMER! Project in progress.**
 
-System created for ESP32 with 8x32 LED Matrix (WS2812B).
+Software created for ESP32 with 8x32 LED Matrix (WS2812B).
 
 ## How to use example
 We encourage the users to use the example as a template for the new projects.
