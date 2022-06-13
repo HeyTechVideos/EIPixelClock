@@ -145,8 +145,8 @@ void app_main(void) {
     screens_setBrightness(DISPLAY_BTIGHTNESS);
     strcpy(screenTIME_time, "11:04");
 
-    strcpy(screenMESSAGE_sender, "Mum: ");
-    strcpy(screenMESSAGE_msg, "Hey, where are you?");
+    strcpy(screenMESSAGE_sender, "");
+    strcpy(screenMESSAGE_msg, "20037");
     // ESP_LOGE("BTN0", "klik");
 
 

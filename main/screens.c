@@ -19,7 +19,7 @@
  ===============================================================================================================*/
 
 uint8_t      screens_id = 0;                        // ID of the current screen
-void       (*screens_tab[256]) ();                  // array which contains all available Screens
+void       (*screens_tab[255]) ();                  // array which contains all available Screens
 uint16_t     screens_ticks      = 0;                     // 
 uint16_t     screens_ticks_help = 0;                     // Counter for ticks, rozne wykorzystania :)
 
@@ -44,7 +44,8 @@ void screens_init() {
     */
     screens_tab[0] = screens_Loading;
     // screens_tab[1] = screens_Message;
-    screens_tab[1] = screens_Time;
+    // screens_tab[1] = screens_Time;
+    screens_tab[1] = screens_ScrollRob;
 }
 
 void screens_setBrightness(uint8_t b) {
@@ -303,15 +304,48 @@ void screens_Message() {
  | Screen: SCROLLROB
  ---------------------------------------------------------------------------------------------------------------*/
 void screens_ScrollRob() {
-    display_setCursor(screens_scroll_cursor);
-    
     display_clearBuffer();
-    uint8_t t_width = display_print(screenTIME_time);
+
+    // On button1 click
+    if (*screens_btn1) {
+
+        // 1. Graphic Transition Animation
+        screenTIME_tran_status = 1; // transition start
+        screenTIME_tran_count = 0;  // reset counter
+    }
+
+    // 1. Graphic Transition Animation
+    screens_Time_OnTransitionAction();
+
+    // Message
+    display_setCursor(9+screens_scroll_cursor);
+    uint8_t t_width1 = display_printf(screenMESSAGE_sender, 0, 1, 1);
+    display_setCursor(9+screens_scroll_cursor+t_width1);
+    uint8_t t_width2 = display_print(screenMESSAGE_msg);
+
+    screens_scroll_helper(9, t_width1+t_width2);
+
+    // Graphic
+    display_setCursor(0);
+    // screens_anim_helper(i_pxci_messenger, 1, 0);
+    // screens_anim_helper(anim_pxci_message, anim_pxci_message_fc, 0, 1);
+
+    // Get graphics
+    if (screenTIME_gp_i >= sizeof(screenTIME_gp)/sizeof(screenTIME_gp[0])) screenTIME_gp_i = 0;  // graphics index overflow
+    const GraphicsFrame_t *frames      = screenTIME_gp[screenTIME_gp_i];
+    uint8_t                frame_count = screenTIME_gp_fc[screenTIME_gp_i];
+
+    // Graphics animation frame
+    if (screens_ticks%2 == 0) screens_anim_frame ++;
+    if (screens_anim_frame >= frame_count) screens_anim_frame = 0;
+
+    // Display graphics
+    display_pxci(frames[screens_anim_frame].graphics, frames[screens_anim_frame].colormap, screenTIME_tran_count);   // "." used for non pointers, "->" for pointers
+
+
+
+    // Send bufer
     portDISABLE_INTERRUPTS(); display_sendBuffer(); portENABLE_INTERRUPTS();
-
-    if (screens_scroll_cursor < -t_width) screens_scroll_cursor = 0;
-
-    screens_scroll_cursor --;
 }
 
 
